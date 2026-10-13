@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: task-manager
+    runtime: node
+    plan: free
+    buildCommand: npm run install:all && npm run build
+    startCommand: npm start
+    healthCheckPath: /api/tasks
+    envVars:
+      - key: NODE_VERSION
+        value: 20.18.0
