@@ -28,6 +28,18 @@ npm run dev
 
 Open http://localhost:5173
 
+## Run with Docker
+
+Two containers: frontend (Nginx) and backend (Express). Nginx proxies `/api` to the backend.
+```
+docker compose up -d --build
+```
+
+- UI: http://localhost:8080
+- API: http://localhost:5000/api/tasks
+
+Data is persisted in the `task-data` Docker volume. Stop with `docker compose down` (add `-v` to also delete the data).
+
 ## API
 
 | Method | Endpoint        | Description           |
